@@ -136,7 +136,7 @@ export default {
     width 100%
     height 0
     padding-bottom 60%
-    margin-top .25rem
+    margin-top .2rem
     .icon-top
       width 100%
       height 0
