@@ -11,14 +11,20 @@
       </div>
     </div>
     <ul class="item-list">
-      <li class="item" v-for="item of list" :key="item.id">
+      <router-link
+        tag="li"
+        class="item"
+        v-for="item of list"
+        :key="item.id"
+        :to="'/detail/' + item.id"
+      >
         <img class="item-img" :src="item.imgUrl">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
           <p class="item-price"><em>￥</em><em>{{item.price}}</em></p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
