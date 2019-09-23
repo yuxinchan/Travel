@@ -1,7 +1,7 @@
 <template>
   <div class="icons">
     <div class="icon-top">
-      <div class="icon" v-for="item of TopIconList" :key="item.id">
+      <div class="icon" v-for="item of topList" :key="item.id">
         <div class="icon-top-img">
           <img class="icon-img-content" :src="item.imgUrl">
         </div>
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="icon-bottom">
-      <swiper>
+      <swiper :options="swiperOption">
         <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-bottom-img">
@@ -26,96 +26,21 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    topList: Array,
+    bottomList: Array
+  },
   data () {
     return {
-      TopIconList: [{
-        id: '0001',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-        desc: '酒店'
-      }, {
-        id: '0002',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/flight.png',
-        desc: '机票'
-      }, {
-        id: '0003',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/package.png',
-        desc: '度假'
-      }, {
-        id: '0004',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/train.png',
-        desc: '火车票'
-      }, {
-        id: '0005',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
-        desc: '景点门票'
-      }, {
-        id: '0006',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/group.png',
-        desc: '特惠酒店'
-      }, {
-        id: '0007',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/bargainflight.png',
-        desc: '低价机票'
-      }, {
-        id: '0008',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/inn.png',
-        desc: '客栈'
-      }, {
-        id: '0009',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/haiwai.png',
-        desc: '海外酒店'
-      }, {
-        id: '0010',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/kezhan.png',
-        desc: '民宿'
-      }],
-      BottomIconList: [{
-        id: '0001',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/bus.png',
-        desc: '汽车票船票'
-      }, {
-        id: '0002',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/tuan.png',
-        desc: '旅游团购'
-      }, {
-        id: '0003',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/freeTravel.png',
-        desc: '自由行'
-      }, {
-        id: '0004',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/car.png',
-        desc: '专车自驾'
-      }, {
-        id: '0005',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/aroundtravel.png',
-        desc: '周边短途'
-      }, {
-        id: '0006',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/jr.png',
-        desc: '金融理财'
-      }, {
-        id: '0007',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/card.png',
-        desc: '保险车险'
-      }, {
-        id: '0008',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/travel.png',
-        desc: '攻略'
-      }, {
-        id: '0009',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/youlun.png',
-        desc: '邮轮'
-      }, {
-        id: '0010',
-        imgUrl: '//s.qunarzz.com/homenode/images/touchheader/oversea.png',
-        desc: '换外币'
-      }]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.BottomIconList.forEach((item, index) => {
+      this.bottomList.forEach((item, index) => {
         const page = Math.floor(index / 5)
         if (!pages[page]) {
           pages[page] = []
