@@ -68,9 +68,9 @@ export default {
       .banner-title
         flex 1
         font-size .36rem
-        padding 0 .2rem
+        padding .1rem .2rem
       .banner-number
-        padding 0 .2rem
+        padding .1rem .2rem
         margin-right  .2rem
         height .32rem
         line-height .32rem
