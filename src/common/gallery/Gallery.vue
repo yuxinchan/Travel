@@ -18,13 +18,7 @@ export default {
     imgs: {
       type: Array,
       default () {
-        return [
-          'http://imgs.qunarzz.com/sight/p0/1908/70/70a9ac02a1edfba4a3.img.jpg_r_800x800_b5cf5a07.jpg',
-          'https://imgs.qunarzz.com/sight/p0/201403/07/452bd2d46925768793ff15a853899211.jpg_350x240_e61b5db4.jpg',
-          'https://imgs.qunarzz.com/sight/p0/201405/29/4bed2643b6a64212d4b8b5713344e56c.jpg_r_800x800_57b37320.jpg',
-          'https://imgs.qunarzz.com/sight/p0/201405/29/b5d02d4967e16b8cbc40f1dbd8186e6f.jpg_r_800x800_504fbd5c.jpg',
-          'https://imgs.qunarzz.com/sight/p0/201405/22/1a9023777da0e4297f6fcebdd629e107.jpg_r_800x800_cf807c05.jpg'
-        ]
+        return []
       }
     }
   },
